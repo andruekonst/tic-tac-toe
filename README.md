@@ -15,6 +15,6 @@ Using
 -----------
 
 1. Make directory db for fields.txt file (if you want to use this version)
-2. Change passwords for first and second users
+2. Change passwords for first and second users(standart password: test)
 3. ...
 4. PROFIT
