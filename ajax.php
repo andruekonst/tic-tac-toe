@@ -77,17 +77,14 @@
 		}
 		return false;
 	}
-	function isFullElem($elem){
-		if($elem != "_"){
-			return true;
-		}else{
+	function isFull(){
+		global $field;
+		if($field["last_coords"] == "0x0"){
 			return false;
 		}
-	}
-	function isFull($field){
 		$arr = $field[getLetters($field["last_coords"])];
 		foreach($arr as $elem => $data){
-			if(!isFull($data)){
+			if($data == "_"){
 				return false;
 			}
 		}
@@ -172,6 +169,9 @@
 						$field[$_POST["f"]][$_POST["b"]] = ($_SESSION["login"] == "first")?"X":"O";
 						$field["last"] = $_SESSION["login"];
 						$field["last_coords"] = $_POST["b"];
+						if(isFull()){
+							$field["last_coords"] = "0x0";
+						}
 						sendAccept("Вы успешно походили в клетку ".$_POST["f"].":".$_POST["b"]);
 						if(isWon(array($field[$_POST["f"]]["1x1"], $field[$_POST["f"]]["1x2"], $field[$_POST["f"]]["1x3"]),
 							array($field[$_POST["f"]]["2x1"], $field[$_POST["f"]]["2x2"], $field[$_POST["f"]]["2x3"]),
