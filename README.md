@@ -2,6 +2,7 @@ Tic-Tac-Toe
 ===========
 
 Extended version of tic-tac-toe. JS Client and PHP Server
+Rules may be found at [habrahabr.ru/post/183764](http://habrahabr.ru/post/183764/ "Rules")
 
 Dependence
 -----------
